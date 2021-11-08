@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Heroes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let h of heroes">
+      <ion-label>{{ h.Name }}</ion-label>
+      <ion-note slot="end">{{ h.Active }}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
